@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <Header></Header>
+    <PostList></PostList>
     <div>
-      
+
     </div>
   </div>
 </template>
