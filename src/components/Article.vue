@@ -8,7 +8,7 @@
       <div class = "topic_header">
       <div class="topic_title">{{post.title}}</div>
       <ul>
-        <li>•发布于{{post}}</li>
+        <li>•发布于{{post.create_at | formatDate}}</li>
         <li>•作者:
           {{post.author.loginname}}
         </li>

@@ -47,7 +47,7 @@
         </span>
       </li>
       <li>
-        <!-- 分页 -->
+        <pagination @handleList="renderList"></pagination>
       </li>  
       </ul>
     </div>
@@ -55,13 +55,18 @@
 </template>
 
 <script>
+  import pagination from './Pagination'
 export default {
   name: 'PostList',
   data () {
     return {
       isLoading:false,
-      posts:[]//代表页面的列表数组
+      posts:[],//代表页面的列表数组
+      postpage:1
     }
+  },
+  components:{
+    pagination
   },
   methods:{
     getData(){
