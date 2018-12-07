@@ -1,9 +1,8 @@
 <template>
   <div id="app">
     <Header></Header>
-    <PostList></PostList>
-    <div>
-
+    <div class="main">
+      <router-view name="main"></router-view>
     </div>
   </div>
 </template>
@@ -14,8 +13,7 @@ import PostList from "./components/PostList"
 export default {
   name: 'App',
   components:{
-    Header,
-    PostList
+    Header,PostList
   }  
 }
 </script>

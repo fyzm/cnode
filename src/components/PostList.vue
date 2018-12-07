@@ -31,7 +31,7 @@
           </span>
         <!-- 标题 -->
         <router-link :to="{
-          name:'post_name',
+          name:'post_content',
           params:{
             id:post.id,
             name:post.author.loginname
@@ -73,7 +73,6 @@ export default {
       })
         .then(res=>{
           this.isLoading = false;
-          console.log(res)
           this.posts = res.data.data;
         })
         .catch(function(err){
