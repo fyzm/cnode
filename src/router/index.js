@@ -18,10 +18,10 @@ export default new Router({
     },
     {
       name:'post_content',
-      path:'/topic/:id',
+      path:'/topic/:id&author=:name',
       components:{
         main:Article,
-        slideBar:SlideBar
+        slidebar:SlideBar
       }
     },
     {

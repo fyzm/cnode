@@ -1,7 +1,7 @@
 <template>
   <div class="pagination">
-    <button>首页</button>
-    <button>上一页</button>
+    <button @click="changeBtn">首页</button>
+    <button @click="changeBtn">上一页</button>
     <button v-if="jduge" class="pagebtn">.....</button>
     <button v-for="btn in pagebtns" :key="btn.id" 
             @click="changeBtn(btn)"
@@ -43,7 +43,21 @@ export default {
         return ;
       }
       this.currentPage = page;
-
+      if(page > 4){
+        this.jduge = true;
+      }else{
+        this.jduge = false;
+      }
+      if(page == this.pagebtns[4]){
+        this.pagebtns.shift();
+        this.pagebtns.splice(4,0,this.pagebtns[3]+1);
+      }else if(page == this.pagebtns[0] && page !=1){
+        //先在第一个位置加一个
+        this.pagebtns.unshift(this.pagebtns[0] - 1);
+        //移除最后一个数字
+        this.pagebtns.splice(5,1);
+      }
+      this.$emit('handleList',this.currentPage);
     }
   }
 }

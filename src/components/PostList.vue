@@ -84,8 +84,12 @@ export default {
           console.log(err)
         })
       },
-  
+    renderList(value){
+      this.postpage = value;
+      this.getData();
+    }
   },
+
   beforeMount(){
     this.isLoading = true;
     this.getData()
@@ -96,49 +100,64 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-.PostList{
-  background-color: #e1e1e1;
-}
-.posts {
-  margin-top: 10px;
-}
-.PostList img{
-  height: 30px;
-  width: 30px;
-  
-}
+  router-link{
+    text-decoration: none;
+  }
+ .PostList{
+    background-color: #e1e1e1;
+  }
+  .posts {
+    margin-top: 10px;
+  }
+
+  .PostList img {
+    height: 30px;
+    width: 30px;
+    vertical-align: middle;
+  }
+
   ul {
     list-style: none;
     width: 100%;
     max-width: 1344px;
     margin: 0 auto;
   }
+
   ul li:not(:first-child) {
     padding: 9px;
     font-size: 15px;
     font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, sans-serif !important;
+    font-weight: 400;
+    background-color: white;
+    color: #333;
     border-top: 1px solid #f0f0f0;
   }
+
   li:not(:first-child):hover {
-    background: #f5f5f5;
+    background: rgb(240, 231, 231);
   }
+
   li:last-child:hover {
     background: white;
   }
+
   li span {
     line-height: 30px;
   }
-  .allcount{
+
+  .allcount {
     width: 70px;
     display: inline-block;
     text-align: center;
     font-size: 12px;
   }
+
   .reply_count {
     color: #9e78c0;
-    font-size: 12px;
+    font-size: 14px;
   }
-  .put_good,.put_top {
+
+  .put_good, .put_top {
     background: #80bd01;
     padding: 2px 4px;
     border-radius: 3px;
@@ -149,7 +168,8 @@ export default {
     font-size: 12px;
     margin-right: 10px;
   }
-    .topiclist-tab {
+
+  .topiclist-tab {
     background-color: #e5e5e5;
     color: #999;
     padding: 2px 4px;
@@ -160,6 +180,7 @@ export default {
     font-size: 12px;
     margin-right: 10px;
   }
+
   .last_reply {
     text-align: right;
     min-width: 50px;
@@ -172,7 +193,7 @@ export default {
 
   .toobar {
     height: 40px;
-    background-color: #f5f5f5;
+    background-color: #f6f6f6;
   }
 
   .toobar span {
@@ -200,6 +221,7 @@ export default {
     text-align: center;
     padding-top: 300px;
   }
+
 
 </style>
     
